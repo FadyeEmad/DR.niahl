@@ -1,0 +1,249 @@
+/* ============================================
+   DR. NIHAL AFFAN - SHARED STYLES & ANIMATIONS
+   ============================================ */
+
+/* REVEAL CLASSES - set by JS on scroll */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.reveal-up    { transform: translateY(30px); }
+.reveal.reveal-left  { transform: translateX(-30px); }
+.reveal.reveal-right { transform: translateX(30px); }
+.reveal.reveal-scale { transform: scale(0.95); }
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* STAGGER DELAYS */
+.delay-1 { transition-delay: 0.1s !important; }
+.delay-2 { transition-delay: 0.2s !important; }
+.delay-3 { transition-delay: 0.3s !important; }
+.delay-4 { transition-delay: 0.4s !important; }
+.delay-5 { transition-delay: 0.5s !important; }
+
+/* ============================================
+   ACTIVE NAV LINK
+   ============================================ */
+.nav-links a.nav-active {
+  background: linear-gradient(135deg, #D5BBA6, #C5A48F);
+  color: #1A1A1A !important;
+  padding: 6px 10px;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(197, 164, 143, 0.4);
+}
+.nav-links a.btn-location:not(.nav-active) {
+  background: none;
+  box-shadow: none;
+  padding: 0;
+}
+.nav-links a.btn-location.nav-active {
+  background: linear-gradient(135deg, #D5BBA6, #C5A48F);
+  padding: 6px 10px;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(197, 164, 143, 0.4);
+}
+
+/* ============================================
+   PAGE TRANSITION
+   ============================================ */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+body {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* ============================================
+   IMAGE HOVER ZOOM (lightweight - no will-change)
+   ============================================ */
+.gallery-item img,
+.clinic-image img {
+  transition: transform 0.15s ease-out;
+}
+.gallery-item:hover img,
+.clinic-card:hover .clinic-image img {
+  transform: scale(1.05);
+}
+
+/* ============================================
+   CARD HOVER LIFT (simple, no will-change)
+   ============================================ */
+.treatment-card {
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+.treatment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.07);
+}
+
+.clinic-card {
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+.clinic-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.06);
+}
+
+/* ============================================
+   FLOATING BOOK BTN
+   ============================================ */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 8px 25px rgba(197, 164, 143, 0.35); }
+  50%       { box-shadow: 0 12px 35px rgba(197, 164, 143, 0.6); }
+}
+.book-btn {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+.book-btn:hover {
+  animation: none;
+}
+
+/* ============================================
+   STAT HOVER GRADIENT TEXT
+   ============================================ */
+.stat-card:hover h3,
+.reach-stat-item:hover h3 {
+  background: linear-gradient(135deg, #C5A48F, #A07858);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================
+   SOCIAL LINK HOVER
+   ============================================ */
+.social-item {
+  transition: transform 0.25s ease;
+}
+.social-item:hover {
+  transform: translateY(-3px);
+}
+
+/* ============================================
+   BUTTON SHINE ON HOVER
+   ============================================ */
+.submit-btn, .book-this-btn {
+  position: relative;
+  overflow: hidden;
+}
+.submit-btn::after, .book-this-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+.submit-btn:hover::after, .book-this-btn:hover::after {
+  left: 150%;
+}
+
+/* ============================================
+   BRAND / FOOTER / NAV HOVER
+   ============================================ */
+.brand-name {
+  transition: opacity 0.3s ease;
+}
+.brand-name:hover {
+  opacity: 0.7;
+}
+
+.footer-col ul li {
+  transition: transform 0.2s ease;
+  cursor: default;
+}
+.footer-col ul li:hover {
+  transform: translateX(4px);
+}
+
+.nav-links a:not(.nav-active):not(.btn-location) {
+  position: relative;
+}
+.nav-links a:not(.nav-active):not(.btn-location)::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #C5A48F;
+  transition: width 0.3s ease;
+}
+.nav-links a:not(.nav-active):not(.btn-location):hover::after {
+  width: 100%;
+}
+
+/* ============================================
+   GALLERY ITEM OVERLAY
+   ============================================ */
+.gallery-item {
+  position: relative;
+}
+.gallery-item::after {
+  content: 'VIEW';
+  position: absolute;
+  inset: 0;
+  background: rgba(60, 30, 10, 0);
+  color: rgba(255,255,255,0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.gallery-item:hover::after {
+  background: rgba(60, 30, 10, 0.22);
+  color: rgba(255,255,255,0.9);
+}
+
+/* ============================================
+   SCROLL TO TOP BUTTON
+   ============================================ */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, #D5BBA6, #C5A48F);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+  font-size: 16px;
+}
+#scrollTopBtn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+#scrollTopBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.16);
+}
+
+/* ============================================
+   IMAGE FADE-IN ON LOAD (CSS only - no shimmer)
+   ============================================ */
+img.img-loading {
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+}
+img.img-loaded {
+  opacity: 1;
+}

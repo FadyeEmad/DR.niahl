@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dr. Nihal Affan - Reveal Your True Beauty</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Montserrat:wght@400;500;600;700;800&family=Alex+Brush&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
 <style>
   :root {
     --bg-top: #EFE4DA;
@@ -251,19 +252,19 @@
     </div>
   </nav>
 
-  <div class="hero-header">
+  <div class="hero-header reveal reveal-up">
     <h1>
       DR. NIHAL AFFAN:<br>
       REVEAL YOUR TRUE BEAUTY.
     </h1>
   </div>
 
-  <div class="hero-image-wrapper">
+  <div class="hero-image-wrapper reveal reveal-scale">
     <img src="Images/Hero/WhatsApp%20Image%202026-04-17%20at%204.40.56%20PM.jpeg" alt="Dr. Nihal Affan">
   </div>
 
   <div class="content-split">
-    <div class="about-section">
+    <div class="about-section reveal reveal-left">
       <div class="cursive-intro">introducing</div>
       <div class="about-title">ABOUT ME</div>
       <div class="about-subtitle">
@@ -274,7 +275,7 @@
       </div>
     </div>
     
-    <div class="stats-section">
+    <div class="stats-section reveal reveal-right">
       <div class="stat-card">
         <h3>3 Million</h3>
         <p>Followers</p>
@@ -286,10 +287,12 @@
     </div>
   </div>
   
-  <div class="bottom-action">
+  <div class="bottom-action reveal reveal-up">
     <button class="book-btn" onclick="window.location.href='page3.html'">BOOK CONSULTATION</button>
   </div>
 </div>
 
+<button id="scrollTopBtn" title="Back to top">↑</button>
+<script src="shared.js"></script>
 </body>
 </html>

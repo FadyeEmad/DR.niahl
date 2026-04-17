@@ -1,385 +1,463 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Nihal Affan - Results & Gallery</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Montserrat:wght@400;500;600;700;800&family=Alex+Brush&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg-page: #EAE0D5;
-    --card-bg: #E0D3C5;
-    --text-primary: #7A6A5E;
-    --text-dark: #1A1A1A;
-    --header-color: #8C827A;
-    --btn-gold: linear-gradient(135deg, #D5BBA6, #C5A48F);
-  }
-  
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--text-dark);
-    background-color: var(--bg-page);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-x: hidden;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Nihal Affan - Results & Gallery</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Montserrat:wght@400;500;600;700;800&family=Alex+Brush&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    :root {
+      --bg-page: #EAE0D5;
+      --card-bg: #E0D3C5;
+      --text-primary: #7A6A5E;
+      --text-dark: #1A1A1A;
+      --header-color: #8C827A;
+      --btn-gold: linear-gradient(135deg, #D5BBA6, #C5A48F);
+    }
 
-  .container {
-    width: 100%;
-    max-width: 900px;
-    padding: 0 24px;
-    margin: 0 auto;
-    position: relative;
-  }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  /* NAV */
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 0;
-    width: 100%;
-  }
-  .brand-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 21px;
-    font-weight: 600;
-    color: var(--text-dark);
-    text-decoration: none;
-  }
-  .nav-links {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-  }
-  .nav-links a {
-    text-decoration: none;
-    font-size: 10px;
-    font-weight: 700;
-    color: var(--text-dark);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  .btn-location {
-    background: var(--btn-gold);
-    color: var(--text-dark) !important;
-    padding: 6px 10px;
-    border-radius: 3px;
-    box-shadow: 0 2px 8px rgba(197, 164, 143, 0.4);
-  }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-dark);
+      background-color: var(--bg-page);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+    }
 
-  /* TOP HEADER */
-  .page-main-header {
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 25px;
-  }
-  .page-main-header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 34px;
-    font-weight: 400;
-    line-height: 1.15;
-    color: #7A6F68;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
+    .container {
+      width: 100%;
+      max-width: 900px;
+      padding: 0 24px;
+      margin: 0 auto;
+      position: relative;
+    }
 
-  /* CLIENT TRANSFORMATIONS HEADER */
-  .section-header {
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 30px;
-  }
-  .section-header h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 26px;
-    font-weight: 400;
-    color: var(--text-dark);
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-  }
-  .section-header p {
-    font-size: 10px;
-    font-weight: 500;
-    line-height: 1.6;
-    color: var(--text-dark);
-    max-width: 500px;
-    margin: 0 auto;
-  }
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 0;
+      width: 100%;
+    }
 
-  /* GRID */
-  .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-bottom: 50px;
-  }
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 21px;
+      font-weight: 600;
+      color: var(--text-dark);
+      text-decoration: none;
+    }
 
-  .treatment-card {
-    background-color: var(--card-bg);
-    border-radius: 6px;
-    padding: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    display: flex;
-    flex-direction: column;
-  }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
 
-  .treatment-images {
-    display: flex;
-    gap: 3px;
-    margin-bottom: 12px;
-    border-radius: 4px;
-    overflow: hidden;
-    height: 140px;
-  }
-  .treatment-images img {
-    width: 50%;
-    height: 100%;
-    object-fit: cover;
-  }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-dark);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
-  .treatment-info h4 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    font-weight: 800;
-    margin-bottom: 6px;
-    color: var(--text-dark);
-  }
+    .btn-location {
+      background: var(--btn-gold);
+      color: var(--text-dark) !important;
+      padding: 6px 10px;
+      border-radius: 3px;
+      box-shadow: 0 2px 8px rgba(197, 164, 143, 0.4);
+    }
 
-  .treatment-info p {
-    font-size: 8px;
-    font-weight: 600;
-    line-height: 1.4;
-    color: var(--text-primary);
-    margin-bottom: 15px;
-    height: 35px;
-  }
+    /* TOP HEADER */
+    .page-main-header {
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 25px;
+    }
 
-  .book-this-btn {
-    width: 100%;
-    background: var(--btn-gold);
-    color: var(--text-dark);
-    border: none;
-    padding: 9px 0;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
-    font-size: 9px;
-    letter-spacing: 1px;
-    border-radius: 3px;
-    cursor: pointer;
-    text-transform: uppercase;
-    text-align: center;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-  }
-  .book-this-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
-  }
+    .page-main-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      font-weight: 400;
+      line-height: 1.15;
+      color: #7A6F68;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
 
-  /* PROCEDURE GALLERY */
-  .procedure-gallery {
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
+    /* CLIENT TRANSFORMATIONS HEADER */
+    .section-header {
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 30px;
+    }
 
-  .gallery-header {
-    text-align: center;
-    margin-bottom: 25px;
-  }
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 400;
+      color: var(--text-dark);
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
 
-  .gallery-header h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    font-weight: 400;
-    color: var(--text-dark);
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-  }
-  .gallery-header p {
-    font-size: 10px;
-    font-weight: 500;
-    color: var(--text-dark);
-  }
+    .section-header p {
+      font-size: 10px;
+      font-weight: 500;
+      line-height: 1.6;
+      color: var(--text-dark);
+      max-width: 500px;
+      margin: 0 auto;
+    }
 
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-  }
+    /* GRID */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 50px;
+    }
 
-  .gallery-item {
-    position: relative;
-    border-radius: 6px;
-    overflow: hidden;
-    height: 160px;
-  }
+    .treatment-card {
+      background-color: var(--card-bg);
+      border-radius: 6px;
+      padding: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+      display: flex;
+      flex-direction: column;
+    }
 
-  .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+    .treatment-images {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 12px;
+      border-radius: 4px;
+      overflow: hidden;
+      height: 140px;
+    }
 
-  .divider {
-    width: 100%;
-    height: 1px;
-    background-color: rgba(26, 26, 26, 0.08);
-    margin: 30px 0;
-  }
+    .treatment-images img {
+      width: 50%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-  /* RESPONSIVE */
-  @media (max-width: 768px) {
-    .page-main-header h1 { font-size: 26px; }
-    .cards-grid { grid-template-columns: repeat(2, 1fr); }
-    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-    nav { padding: 20px 0; }
-    .brand-name { font-size: 17px; }
-    .nav-links { gap: 12px; }
-    .nav-links a { font-size: 8px; }
-    .section-header h2 { font-size: 22px; }
-  }
+    .treatment-info h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: var(--text-dark);
+    }
 
-  @media (max-width: 480px) {
-    .page-main-header h1 { font-size: 20px; }
-    .cards-grid { grid-template-columns: 1fr; }
-    .gallery-grid { grid-template-columns: 1fr; }
-    .gallery-item { height: 200px; }
-    .treatment-images { height: 180px; }
-    .nav-links { gap: 8px; }
-    .nav-links a { font-size: 7px; letter-spacing: 0; }
-    .btn-location { padding: 4px 6px; }
-  }
-</style>
+    .treatment-info p {
+      font-size: 8px;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--text-primary);
+      margin-bottom: 15px;
+      height: 35px;
+    }
+
+    .book-this-btn {
+      width: 100%;
+      background: var(--btn-gold);
+      color: var(--text-dark);
+      border: none;
+      padding: 9px 0;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 9px;
+      letter-spacing: 1px;
+      border-radius: 3px;
+      cursor: pointer;
+      text-transform: uppercase;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .book-this-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+    }
+
+    /* PROCEDURE GALLERY */
+    .procedure-gallery {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    .gallery-header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .gallery-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--text-dark);
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .gallery-header p {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
+      height: 160px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background-color: rgba(26, 26, 26, 0.08);
+      margin: 30px 0;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .page-main-header h1 {
+        font-size: 26px;
+      }
+
+      .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      nav {
+        padding: 20px 0;
+      }
+
+      .brand-name {
+        font-size: 17px;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: 8px;
+      }
+
+      .section-header h2 {
+        font-size: 22px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .page-main-header h1 {
+        font-size: 20px;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item {
+        height: 200px;
+      }
+
+      .treatment-images {
+        height: 180px;
+      }
+
+      .nav-links {
+        gap: 8px;
+      }
+
+      .nav-links a {
+        font-size: 7px;
+        letter-spacing: 0;
+      }
+
+      .btn-location {
+        padding: 4px 6px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="container">
-  <nav>
-    <a href="index.html" class="brand-name">Dr. Nihal Affan</a>
-    <div class="nav-links">
-      <a href="index.html">ABOUT</a>
-      <a href="page2.html">RESULTS</a>
-      <a href="page3.html">BOOK</a>
-      <a href="page4.html" class="btn-location">LOCATIONS</a>
-    </div>
-  </nav>
+  <div class="container">
+    <nav>
+      <a href="index.html" class="brand-name">Dr. Nihal Affan</a>
+      <div class="nav-links">
+        <a href="index.html">ABOUT</a>
+        <a href="page2.html">RESULTS</a>
+        <a href="page3.html">BOOK</a>
+        <a href="page4.html" class="btn-location">LOCATIONS</a>
+      </div>
+    </nav>
 
-  <div class="page-main-header">
-    <h1>RESULTS &amp; GALLERY</h1>
+    <div class="page-main-header reveal reveal-up">
+      <h1>RESULTS &amp; GALLERY</h1>
+    </div>
+
+    <div class="section-header reveal reveal-up">
+      <h2>CLIENT TRANSFORMATIONS</h2>
+      <p>Dr. Nihal Affan, lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <div class="cards-grid">
+      <!-- Card 1 -->
+      <div class="treatment-card">
+        <div class="treatment-images">
+          <img loading="lazy" decoding="async" src="Images/Results/A1.jpeg" alt="Before">
+          <img loading="lazy" decoding="async" src="Images/Results/A2.jpeg" alt="After">
+        </div>
+        <div class="treatment-info">
+          <h4>Before &amp; After</h4>
+          <p>Expert application enhancing facial harmony and delivering natural, refined results tailored to your unique
+            features.</p>
+          <button class="book-this-btn" onclick="window.location.href='page3.html'">BOOK THIS LOOK</button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="treatment-card">
+        <div class="treatment-images">
+          <img loading="lazy" decoding="async" src="Images/Results/B1.jpeg" alt="Before">
+          <img loading="lazy" decoding="async" src="Images/Results/B2.jpeg" alt="After">
+        </div>
+        <div class="treatment-info">
+          <h4>Jawline Contour</h4>
+          <p>Sculpted jawline definition using advanced filler techniques for a sharper, more youthful appearance.</p>
+          <button class="book-this-btn" onclick="window.location.href='page3.html'">BOOK THIS LOOK</button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="treatment-card">
+        <div class="treatment-images">
+          <img loading="lazy" decoding="async" src="Images/Results/C1.jpeg" alt="Before">
+          <img loading="lazy" decoding="async" src="Images/Results/C2.jpeg" alt="After">
+        </div>
+        <div class="treatment-info">
+          <h4>Facial Balancing</h4>
+          <p>Restoring volume and balancing proportions with subtle adjustments utilizing premium dermal fillers.</p>
+          <button class="book-this-btn" onclick="window.location.href='page3.html'">BOOK THIS LOOK</button>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="treatment-card">
+        <div class="treatment-images">
+          <img loading="lazy" decoding="async" src="Images/Results/D1.jpeg" alt="Before">
+          <img loading="lazy" decoding="async" src="Images/Results/D2.jpeg" alt="After">
+        </div>
+        <div class="treatment-info">
+          <h4>Rhinoplasty</h4>
+          <p>Non-surgical nose refinement focusing on perfecting proportions and optimizing facial harmony.</p>
+          <button class="book-this-btn" onclick="window.location.href='page3.html'">BOOK THIS LOOK</button>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="treatment-card">
+        <div class="treatment-images">
+          <img loading="lazy" decoding="async" src="Images/Results/E1.jpeg" alt="Before">
+          <img loading="lazy" decoding="async" src="Images/Results/E2.jpeg" alt="After">
+        </div>
+        <div class="treatment-info">
+          <h4>Under-Eye Refresh</h4>
+          <p>Minimizing dark circles and hollowness to achieve a bright, well-rested look effortlessly.</p>
+          <button class="book-this-btn" onclick="window.location.href='page3.html'">BOOK THIS LOOK</button>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="treatment-card">
+        <div class="treatment-images">
+          <img loading="lazy" decoding="async" src="Images/Results/A1.jpeg" alt="Before">
+          <img loading="lazy" decoding="async" src="Images/Results/A2.jpeg" alt="After">
+        </div>
+        <div class="treatment-info">
+          <h4>Skin Rejuvenation</h4>
+          <p>Advanced treatments focusing on restoring texture, tone, and a natural radiant glow across your skin.</p>
+          <button class="book-this-btn" onclick="window.location.href='page3.html'">BOOK THIS LOOK</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- PROCEDURE GALLERY -->
+    <div class="procedure-gallery">
+      <div class="gallery-header reveal reveal-up">
+        <h2>PROCEDURE GALLERY</h2>
+        <p>High quality gallery of treatment in progress and advanced aesthetics workflows.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img
+            loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            alt="Procedure">
+        </div>
+        <div class="gallery-item">
+          <img
+            loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            alt="Procedure">
+        </div>
+        <div class="gallery-item">
+          <img
+            loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            alt="Procedure">
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="section-header">
-    <h2>CLIENT TRANSFORMATIONS</h2>
-    <p>Dr. Nihal Affan, lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-  </div>
-
-  <div class="cards-grid">
-    <!-- Card 1 -->
-    <div class="treatment-card">
-      <div class="treatment-images">
-        <img src="Images/Results/A1.jpeg" alt="Before">
-        <img src="Images/Results/A2.jpeg" alt="After">
-      </div>
-      <div class="treatment-info">
-        <h4>Before &amp; After</h4>
-        <p>Expert application enhancing facial harmony and delivering natural, refined results tailored to your unique features.</p>
-        <button class="book-this-btn" onclick="window.location.href='page3.html'">BOOK THIS LOOK</button>
-      </div>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="treatment-card">
-      <div class="treatment-images">
-        <img src="Images/Results/B1.jpeg" alt="Before">
-        <img src="Images/Results/B2.jpeg" alt="After">
-      </div>
-      <div class="treatment-info">
-        <h4>Jawline Contour</h4>
-        <p>Sculpted jawline definition using advanced filler techniques for a sharper, more youthful appearance.</p>
-        <button class="book-this-btn" onclick="window.location.href='page3.html'">BOOK THIS LOOK</button>
-      </div>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="treatment-card">
-      <div class="treatment-images">
-        <img src="Images/Results/C1.jpeg" alt="Before">
-        <img src="Images/Results/C2.jpeg" alt="After">
-      </div>
-      <div class="treatment-info">
-        <h4>Facial Balancing</h4>
-        <p>Restoring volume and balancing proportions with subtle adjustments utilizing premium dermal fillers.</p>
-        <button class="book-this-btn" onclick="window.location.href='page3.html'">BOOK THIS LOOK</button>
-      </div>
-    </div>
-
-    <!-- Card 4 -->
-    <div class="treatment-card">
-      <div class="treatment-images">
-        <img src="Images/Results/D1.jpeg" alt="Before">
-        <img src="Images/Results/D2.jpeg" alt="After">
-      </div>
-      <div class="treatment-info">
-        <h4>Rhinoplasty</h4>
-        <p>Non-surgical nose refinement focusing on perfecting proportions and optimizing facial harmony.</p>
-        <button class="book-this-btn" onclick="window.location.href='page3.html'">BOOK THIS LOOK</button>
-      </div>
-    </div>
-
-    <!-- Card 5 -->
-    <div class="treatment-card">
-      <div class="treatment-images">
-        <img src="Images/Results/E1.jpeg" alt="Before">
-        <img src="Images/Results/E2.jpeg" alt="After">
-      </div>
-      <div class="treatment-info">
-        <h4>Under-Eye Refresh</h4>
-        <p>Minimizing dark circles and hollowness to achieve a bright, well-rested look effortlessly.</p>
-        <button class="book-this-btn" onclick="window.location.href='page3.html'">BOOK THIS LOOK</button>
-      </div>
-    </div>
-
-    <!-- Card 6 -->
-    <div class="treatment-card">
-      <div class="treatment-images">
-        <img src="Images/Results/A1.jpeg" alt="Before">
-        <img src="Images/Results/A2.jpeg" alt="After">
-      </div>
-      <div class="treatment-info">
-        <h4>Skin Rejuvenation</h4>
-        <p>Advanced treatments focusing on restoring texture, tone, and a natural radiant glow across your skin.</p>
-        <button class="book-this-btn" onclick="window.location.href='page3.html'">BOOK THIS LOOK</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- PROCEDURE GALLERY -->
-  <div class="procedure-gallery">
-    <div class="gallery-header">
-      <h2>PROCEDURE GALLERY</h2>
-      <p>High quality gallery of treatment in progress and advanced aesthetics workflows.</p>
-    </div>
-
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Procedure">
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Procedure">
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Procedure">
-      </div>
-    </div>
-  </div>
-</div>
-
+  <button id="scrollTopBtn" title="Back to top">↑</button>
+  <script src="shared.js"></script>
 </body>
+
 </html>
