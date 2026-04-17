@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Nihal Affan - Booking & Inquiry</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Montserrat:wght@400;500;600;700;800&family=Alex+Brush&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-page: #EBE0D6;
+    --bg-header: #E2D4C8;
+    --form-bg: #DFD1C4;
+    --input-bg: #EBE0D6;
+    --text-primary: #7A6A5E;
+    --text-dark: #1A1A1A;
+    --header-color: #796C63;
+    --btn-gold: linear-gradient(135deg, #D6BBA7, #C6A590);
+    --input-border: #C8B9AD;
+  }
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-page);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 900px;
+    padding: 0 24px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    width: 100%;
+  }
+  .brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .nav-links a {
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .btn-location {
+    background: var(--btn-gold);
+    color: var(--text-dark) !important;
+    padding: 6px 10px;
+    border-radius: 3px;
+    box-shadow: 0 2px 8px rgba(197, 164, 143, 0.4);
+  }
+
+  /* TOP HEADER */
+  .page-main-header-wrapper {
+    width: 100vw;
+    background-color: var(--bg-header);
+    padding: 30px 0;
+    margin-bottom: 40px;
+  }
+  .page-main-header {
+    text-align: center;
+  }
+  .page-main-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--header-color);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* FORM CARD */
+  .form-card {
+    background-color: var(--form-bg);
+    border-radius: 8px;
+    padding: 40px 50px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    margin-bottom: 60px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .form-header {
+    text-align: center;
+    margin-bottom: 35px;
+  }
+  .form-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--text-dark);
+    letter-spacing: 1px;
+  }
+
+  /* FORM FIELDS */
+  .form-group { margin-bottom: 22px; }
+
+  .group-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  
+  .circle-num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+    background: var(--btn-gold);
+    color: var(--bg-page);
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  
+  .group-label-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--text-dark);
+  }
+
+  .form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 12px;
+  }
+
+  .form-col { flex: 1; }
+
+  .form-control {
+    width: 100%;
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    padding: 10px 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-dark);
+    background-color: var(--input-bg);
+    transition: border-color 0.3s;
+  }
+  .form-control::placeholder { color: #928377; }
+  .form-control:focus {
+    outline: none;
+    border-color: #A08878;
+    background-color: var(--bg-header);
+  }
+
+  select.form-control {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%231A1A1A' d='M5 6L0 0h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 30px;
+  }
+
+  textarea.form-control { resize: none; height: 100px; }
+
+  /* SUBMIT BUTTON */
+  .submit-btn {
+    width: 100%;
+    background: var(--btn-gold);
+    color: var(--text-dark);
+    border: none;
+    padding: 14px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-top: 5px;
+    transition: all 0.3s ease;
+  }
+  .submit-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  }
+
+  /* FOOTER */
+  .footer-divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(26, 26, 26, 0.1);
+    margin-bottom: 25px;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 20px;
+  }
+
+  .footer-col { flex: 1; }
+
+  .footer-col h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  .footer-col p, .footer-col ul {
+    font-size: 9px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--text-dark);
+    list-style: none;
+  }
+  
+  .footer-col ul li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+  
+  .icon-wrapper { color: #B69580; font-size: 10px; }
+
+  .footer-bottom {
+    text-align: center;
+    padding: 12px 0 20px;
+    border-top: 1px solid rgba(26, 26, 26, 0.05);
+    font-size: 9px;
+    font-weight: 500;
+    color: var(--text-dark);
+  }
+
+  /* SUCCESS MODAL */
+  .modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(26, 26, 26, 0.4);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  .modal-overlay.active { opacity: 1; visibility: visible; }
+  .modal-box {
+    background-color: var(--form-bg);
+    padding: 40px 60px;
+    border-radius: 8px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    text-align: center;
+    transform: translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid var(--input-border);
+  }
+  .modal-overlay.active .modal-box { transform: translateY(0); }
+  .modal-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+  }
+  .modal-close-btn {
+    background: var(--btn-gold);
+    color: var(--text-dark);
+    border: none;
+    padding: 10px 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+  .modal-close-btn:hover {
+    transform: translateY(-1px);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .page-main-header h1 { font-size: 28px; }
+    .form-card { padding: 30px 25px; margin-left: 0; margin-right: 0; max-width: 100%; }
+    .form-row { flex-direction: column; gap: 12px; }
+    .footer-content { flex-direction: column; gap: 20px; }
+    nav { padding: 20px 0; }
+    .brand-name { font-size: 17px; }
+    .nav-links { gap: 12px; }
+    .nav-links a { font-size: 8px; }
+    .modal-box { padding: 30px 30px; margin: 0 20px; }
+    .modal-box h3 { font-size: 22px; }
+  }
+
+  @media (max-width: 480px) {
+    .page-main-header h1 { font-size: 22px; }
+    .nav-links { gap: 8px; }
+    .nav-links a { font-size: 7px; letter-spacing: 0; }
+    .btn-location { padding: 4px 6px; }
+    .form-header h2 { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container" style="padding-bottom: 0;">
+  <nav>
+    <a href="index.html" class="brand-name">Dr. Nihal Affan</a>
+    <div class="nav-links">
+      <a href="index.html">ABOUT</a>
+      <a href="page2.html">RESULTS</a>
+      <a href="page3.html">BOOK</a>
+      <a href="page4.html" class="btn-location">LOCATIONS</a>
+    </div>
+  </nav>
+</div>
+
+<div class="page-main-header-wrapper">
+  <div class="container page-main-header">
+    <h1>BOOKING &amp; INQUIRY</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="form-card">
+    <div class="form-header">
+      <h2>SCHEDULE YOUR JOURNEY</h2>
+    </div>
+
+    <form id="bookingForm" name="submit-to-google-sheet">
+      <!-- Client Details -->
+      <div class="form-group">
+        <div class="group-label">
+          <div class="circle-num">1</div>
+          <div class="group-label-text">Client Details</div>
+        </div>
+        <div class="form-row">
+          <div class="form-col">
+            <input type="text" name="Name" class="form-control" placeholder="Name" required>
+          </div>
+          <div class="form-col">
+            <input type="email" name="Email" class="form-control" placeholder="Email" required>
+          </div>
+        </div>
+        <div class="form-row" style="margin-bottom: 0;">
+          <div class="form-col">
+            <input type="tel" name="Mobile" class="form-control" placeholder="Mobile" required>
+          </div>
+        </div>
+      </div>
+
+      <!-- Select Service -->
+      <div class="form-group">
+        <div class="group-label">
+          <div class="circle-num">2</div>
+          <div class="group-label-text">Select Service</div>
+        </div>
+        <div class="form-row" style="margin-bottom: 0;">
+          <div class="form-col">
+            <select name="Service" class="form-control" required>
+              <option value="" disabled selected>Select Services</option>
+              <option value="Non-Surgical Face/Neck Lift">شد الوجه والرقبه اللاجراحي بالتكنيك الخاص</option>
+              <option value="Fillers">حقن الفيلر</option>
+              <option value="Botox">حقن البوتكس</option>
+              <option value="Skin/Hair Treatment">علاج البشرة والشعر</option>
+              <option value="Skin Boosters">ابر النضارة</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Message/Question -->
+      <div class="form-group" style="margin-bottom: 25px;">
+        <div class="group-label">
+          <div class="circle-num">3</div>
+          <div class="group-label-text">Message/Question</div>
+        </div>
+        <div class="form-row" style="margin-bottom: 0;">
+          <div class="form-col">
+            <textarea name="Message" class="form-control" placeholder="Message/Question"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submitBtn">SUBMIT INQUIRY</button>
+    </form>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer-divider"></div>
+  
+  <div class="footer-content">
+    <div class="footer-col" style="flex: 1.2;">
+      <h4>DR. NIHAL AFFAN</h4>
+      <p style="margin-top: -4px;">
+        © Dr Nihal Affan, Saudi<br>
+        founder of luxury clinics<br>
+        in Jeddah &amp; Dubai
+      </p>
+    </div>
+    
+    <div class="footer-col" style="flex: 1;">
+      <h4>CONTACT US</h4>
+      <ul>
+        <li><span class="icon-wrapper">✉</span> @drnihalaffanclinics.com</li>
+        <li><span class="icon-wrapper">✉</span> info@drnihalaffan.com</li>
+      </ul>
+    </div>
+    
+    <div class="footer-col" style="flex: 1;">
+      <h4>CALL US</h4>
+      <ul>
+        <li><span class="icon-wrapper">📞</span> +2279-229-5230</li>
+        <li><span class="icon-wrapper">📞</span> +2279-559-9220</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">www.drnihalaffan.com</div>
+</div>
+
+<!-- Custom Success Modal -->
+<div class="modal-overlay" id="successModal">
+  <div class="modal-box">
+    <h3>Booking successful</h3>
+    <button class="modal-close-btn" onclick="document.getElementById('successModal').classList.remove('active')">Close</button>
+  </div>
+</div>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyXnxvdBUiYbZ4-z0v1pbIx6wP3Z4rj-oIZ3AsPcUjI97sU4uXKZwu4miuMS8BcJfN5eA/exec';
+  const form = document.forms['submit-to-google-sheet'];
+  const btn = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    if (scriptURL === 'YOUR_APPS_SCRIPT_URL_HERE') {
+      alert("Please add your Google Apps Script URL first!");
+      return;
+    }
+
+    const originalText = btn.innerHTML;
+    btn.innerHTML = 'SUBMITTING...';
+    btn.style.opacity = '0.7';
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+      .then(response => {
+        document.getElementById('successModal').classList.add('active');
+        form.reset();
+        btn.innerHTML = originalText;
+        btn.style.opacity = '1';
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+        document.getElementById('successModal').classList.add('active');
+        form.reset();
+        btn.innerHTML = originalText;
+        btn.style.opacity = '1';
+      });
+  });
+</script>
+
+</body>
+</html>

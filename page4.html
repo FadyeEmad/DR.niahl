@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Nihal Affan - Our Clinics</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Montserrat:wght@400;500;600;700;800&family=Alex+Brush&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-page: #EAE1D7;
+    --card-bg: #E0D3C5;
+    --text-primary: #7A6A5E;
+    --text-dark: #1A1A1A;
+    --header-color: #796C63;
+    --btn-gold: linear-gradient(135deg, #D6BBA7, #C6A590);
+  }
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-page);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 900px;
+    padding: 0 24px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    width: 100%;
+  }
+  .brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .nav-links a {
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .btn-location {
+    background: var(--btn-gold);
+    color: var(--text-dark) !important;
+    padding: 6px 10px;
+    border-radius: 3px;
+    box-shadow: 0 2px 8px rgba(197, 164, 143, 0.4);
+  }
+
+  /* TOP HEADER */
+  .page-main-header {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+  .page-main-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.15;
+    color: #79716B;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* CLINICS GRID */
+  .clinics-grid {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .clinic-card {
+    flex: 1;
+    background-color: var(--card-bg);
+    border: 1px solid rgba(26,26,26,0.08);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  }
+
+  .clinic-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+  }
+  .clinic-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .clinic-info {
+    padding: 25px 20px;
+    text-align: center;
+  }
+  .clinic-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+    letter-spacing: 1px;
+  }
+  .clinic-info p {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--text-dark);
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  /* DIVIDER */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(26,26,26,0.08);
+    margin: 30px 0;
+  }
+
+  /* GLOBAL REACH SECTION */
+  .global-reach-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 30px 0;
+  }
+  .map-container {
+    flex: 1.2;
+  }
+  .map-container img {
+    width: 100%;
+    display: block;
+  }
+  
+  .reach-info {
+    flex: 1;
+  }
+  .reach-info h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+  }
+  .reach-info p {
+    font-size: 9px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+  }
+
+  .reach-stats {
+    display: flex;
+    gap: 30px;
+  }
+  .reach-stat-item h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  .reach-stat-item p {
+    font-size: 10px;
+    color: var(--text-dark);
+    margin-bottom: 0;
+  }
+  .stat-divider {
+    width: 1px;
+    background-color: rgba(26,26,26,0.2);
+    height: 35px;
+    margin-top: 5px;
+  }
+
+  /* PARTNERSHIPS */
+  .partnerships-section {
+    text-align: center;
+    padding: 40px 0;
+  }
+  .partnerships-header {
+    margin-bottom: 30px;
+  }
+  .partnerships-header h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+
+  .logos-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+
+  .logo-item {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo-item.sans {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -1px;
+  }
+  .logo-icon {
+    width: 15px;
+    height: 15px;
+    background-color: var(--text-dark);
+    color: var(--bg-page);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+  }
+
+  /* SOCIAL AND FOOTER */
+  .social-footer {
+    padding: 30px 0 50px;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  .social-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.3s;
+  }
+  .social-item:hover { opacity: 0.7; }
+  .social-icon {
+    font-size: 16px;
+    color: #B69580;
+  }
+
+  .footer-columns {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+  }
+
+  .footer-col h4 {
+    font-size: 10px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+  .footer-col ul {
+    list-style: none;
+  }
+  .footer-col ul li {
+    font-size: 9px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+  }
+
+  .thank-you-box {
+    background-color: var(--card-bg);
+    padding: 30px 50px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid rgba(26,26,26,0.08);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  }
+  .thank-you-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding: 12px 0 20px;
+    border-top: 1px solid rgba(26, 26, 26, 0.05);
+    font-size: 9px;
+    font-weight: 500;
+    color: var(--text-dark);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .page-main-header h1 { font-size: 28px; }
+    .clinics-grid { flex-direction: column; }
+    .clinic-image { height: 250px; }
+    .global-reach-section { flex-direction: column; gap: 25px; }
+    .reach-stats { justify-content: center; }
+    .logos-container { gap: 30px; }
+    .social-links { gap: 30px; }
+    .footer-columns { flex-direction: column; align-items: flex-start; gap: 25px; }
+    .thank-you-box { width: 100%; }
+    nav { padding: 20px 0; }
+    .brand-name { font-size: 17px; }
+    .nav-links { gap: 12px; }
+    .nav-links a { font-size: 8px; }
+  }
+
+  @media (max-width: 480px) {
+    .page-main-header h1 { font-size: 22px; }
+    .reach-info h2 { font-size: 18px; }
+    .reach-stat-item h3 { font-size: 18px; }
+    .social-links { gap: 20px; }
+    .social-item { font-size: 10px; }
+    .nav-links { gap: 8px; }
+    .nav-links a { font-size: 7px; letter-spacing: 0; }
+    .btn-location { padding: 4px 6px; }
+    .logos-container { gap: 20px; }
+    .logo-item { font-size: 14px; }
+    .logo-item.sans { font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <nav>
+    <a href="index.html" class="brand-name">Dr. Nihal Affan</a>
+    <div class="nav-links">
+      <a href="index.html">ABOUT</a>
+      <a href="page2.html">RESULTS</a>
+      <a href="page3.html">BOOK</a>
+      <a href="page4.html" class="btn-location">LOCATIONS</a>
+    </div>
+  </nav>
+
+  <div class="page-main-header">
+    <h1>OUR CLINICS</h1>
+  </div>
+
+  <div class="clinics-grid">
+    <div class="clinic-card">
+      <div class="clinic-image">
+        <img src="Images/Page 3/dubai.jpeg" alt="Dubai Clinic">
+      </div>
+      <div class="clinic-info">
+        <h3>DUBAI</h3>
+        <p>Exclusive aesthetic clinic providing world-class treatments in the heart of Dubai</p>
+      </div>
+    </div>
+
+    <div class="clinic-card">
+      <div class="clinic-image">
+        <img src="Images/Page 3/Clinc.jpeg" alt="Jeddah Clinic">
+      </div>
+      <div class="clinic-info">
+        <h3>JEDDAH</h3>
+        <p>Ultra-luxe clinic offering innovative modern aesthetic procedures</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="global-reach-section">
+    <div class="map-container">
+      <img src="Images/Page 3/map.jpeg" alt="World Map" style="mix-blend-mode: multiply;">
+    </div>
+    <div class="reach-info">
+      <h2>GLOBAL REACH</h2>
+      <p>Dr. Nihal Affan is at the forefront of connecting global cosmetic medicine divisions with premium quality standards across multiple regions worldwide.</p>
+      
+      <div class="reach-stats">
+        <div class="reach-stat-item">
+          <h3>43%</h3>
+          <p>Followers</p>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="reach-stat-item">
+          <h3>53%</h3>
+          <p>Statistics</p>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="reach-stat-item">
+          <h3>23%</h3>
+          <p>Consultations</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="partnerships-section">
+    <div class="partnerships-header">
+      <h3>PARTNERSHIPS</h3>
+    </div>
+
+    <div class="logos-container">
+      <div class="logo-item sans" style="letter-spacing: -2px;">PA<span style="font-size:22px; font-weight: 300;">S</span>/C</div>
+      <div class="logo-item sans">
+        <span class="logo-icon">+</span>
+        Na skin
+      </div>
+      <div class="logo-item" style="font-weight: 700;">Forbes</div>
+      <div class="logo-item" style="display:flex; flex-direction:column; gap:2px; font-size:6px; font-family:'Montserrat', sans-serif;">
+        <span style="font-size: 16px;">☗</span>
+        PECHANPIPUTS
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="social-footer">
+    <div class="social-links">
+      <div class="social-item">
+        <span class="social-icon">👻</span>
+        SNAPCHAT
+      </div>
+      <div class="social-item">
+        <span class="social-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </span>
+        INSTAGRAM
+      </div>
+      <div class="social-item">
+        <span class="social-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+        </span>
+        TIKTOK
+      </div>
+    </div>
+
+    <div class="footer-columns">
+      <div class="footer-col" style="flex: 1;">
+        <h4>ABOUT US</h4>
+        <ul>
+          <li>Facebook &amp; Links</li>
+          <li>Business &amp; Links</li>
+        </ul>
+      </div>
+
+      <div class="footer-col" style="flex: 1;">
+        <h4>LINK</h4>
+        <ul>
+          <li>About</li>
+          <li>Press</li>
+          <li>Contact</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </div>
+
+      <div class="thank-you-box" style="flex: 1.5;">
+        <h3>Thank You for<br>Choosing Excellence</h3>
+      </div>
+    </div>
+
+    <div class="footer-bottom">www.drnihalaffan.com</div>
+  </div>
+</div>
+
+</body>
+</html>

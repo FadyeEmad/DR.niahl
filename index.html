@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Nihal Affan - Reveal Your True Beauty</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Montserrat:wght@400;500;600;700;800&family=Alex+Brush&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-top: #EFE4DA;
+    --bg-bottom: #E8D9CC;
+    --card-bg: #E2D5C7;
+    --text-primary: #7A6A5E;
+    --text-dark: #1A1A1A;
+    --header-color: #8C827A;
+    --btn-gold: linear-gradient(135deg, #D5BBA6, #C5A48F);
+    --btn-gold-hover: linear-gradient(135deg, #C5A48F, #B59380);
+  }
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-dark);
+    background: linear-gradient(to bottom, var(--bg-top) 0%, var(--bg-top) 62%, var(--bg-bottom) 62%, var(--bg-bottom) 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 900px;
+    padding: 0 24px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    width: 100%;
+  }
+  .brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .nav-links a {
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .btn-location {
+    background: var(--btn-gold);
+    color: var(--text-dark) !important;
+    padding: 6px 10px;
+    border-radius: 3px;
+    box-shadow: 0 2px 8px rgba(197, 164, 143, 0.4);
+  }
+
+  /* HERO HEADER */
+  .hero-header {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 35px;
+  }
+  .hero-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--header-color);
+    letter-spacing: 1px;
+  }
+
+  /* HERO IMAGE */
+  .hero-image-wrapper {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    height: 480px;
+  }
+  .hero-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%;
+  }
+
+  /* CONTENT BELOW IMAGE */
+  .content-split {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 30px;
+    padding: 0 10px;
+  }
+  
+  .about-section {
+    flex: 1;
+    max-width: 420px;
+  }
+  
+  .cursive-intro {
+    font-family: 'Alex Brush', cursive;
+    font-size: 64px;
+    color: var(--text-dark);
+    line-height: 0.5;
+    margin-bottom: 8px;
+    margin-left: -5px;
+    text-transform: lowercase;
+  }
+  .about-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    color: var(--text-dark);
+    line-height: 1;
+  }
+  .about-subtitle {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+  }
+  .about-desc {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #555;
+    max-width: 380px;
+  }
+
+  .stats-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 240px;
+    margin-top: 20px;
+  }
+  .stat-card {
+    background: var(--card-bg);
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+  }
+  .stat-card h3 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 2px;
+    color: var(--text-dark);
+  }
+  .stat-card p {
+    font-size: 13px;
+    color: var(--text-dark);
+    font-weight: 500;
+  }
+
+  /* BOOK CONSULTATION BUTTON (improved) */
+  .bottom-action {
+    width: 100%;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .book-btn {
+    background: var(--btn-gold);
+    color: var(--text-dark);
+    border: none;
+    padding: 16px 60px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 3px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 8px 25px rgba(197, 164, 143, 0.45);
+    transition: all 0.3s ease;
+  }
+  .book-btn:hover {
+    background: var(--btn-gold-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(197, 164, 143, 0.55);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero-header h1 { font-size: 28px; }
+    .hero-image-wrapper { height: 320px; }
+    .content-split { flex-direction: column; gap: 30px; padding: 0; }
+    .about-section { max-width: 100%; }
+    .cursive-intro { font-size: 48px; }
+    .about-title { font-size: 32px; }
+    .about-subtitle { font-size: 13px; }
+    .stats-section { width: 100%; flex-direction: row; }
+    .stat-card { flex: 1; }
+    .book-btn { padding: 14px 40px; font-size: 12px; letter-spacing: 2px; }
+    nav { padding: 20px 0; }
+    .brand-name { font-size: 17px; }
+    .nav-links { gap: 12px; }
+    .nav-links a { font-size: 8px; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-header h1 { font-size: 22px; }
+    .hero-image-wrapper { height: 260px; }
+    .cursive-intro { font-size: 36px; }
+    .about-title { font-size: 26px; }
+    .stats-section { flex-direction: column; }
+    .nav-links { gap: 8px; }
+    .nav-links a { font-size: 7px; letter-spacing: 0; }
+    .btn-location { padding: 4px 6px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <nav>
+    <a href="index.html" class="brand-name">Dr. Nihal Affan</a>
+    <div class="nav-links">
+      <a href="index.html">ABOUT</a>
+      <a href="page2.html">RESULTS</a>
+      <a href="page3.html">BOOK</a>
+      <a href="page4.html" class="btn-location">LOCATIONS</a>
+    </div>
+  </nav>
+
+  <div class="hero-header">
+    <h1>
+      DR. NIHAL AFFAN:<br>
+      REVEAL YOUR TRUE BEAUTY.
+    </h1>
+  </div>
+
+  <div class="hero-image-wrapper">
+    <img src="Images/Hero/WhatsApp%20Image%202026-04-17%20at%204.40.56%20PM.jpeg" alt="Dr. Nihal Affan">
+  </div>
+
+  <div class="content-split">
+    <div class="about-section">
+      <div class="cursive-intro">introducing</div>
+      <div class="about-title">ABOUT ME</div>
+      <div class="about-subtitle">
+        Dr. Nihal Affan, Saudi founder of<br>luxury clinics in Jeddah &amp; Dubai
+      </div>
+      <div class="about-desc">
+        Dr. Nihal Affan, lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </div>
+    </div>
+    
+    <div class="stats-section">
+      <div class="stat-card">
+        <h3>3 Million</h3>
+        <p>Followers</p>
+      </div>
+      <div class="stat-card">
+        <h3>3 Million</h3>
+        <p>Followers</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="bottom-action">
+    <button class="book-btn" onclick="window.location.href='page3.html'">BOOK CONSULTATION</button>
+  </div>
+</div>
+
+</body>
+</html>
