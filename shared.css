@@ -27,11 +27,11 @@
    ACTIVE NAV LINK
    ============================================ */
 .nav-links a.nav-active {
-  background: linear-gradient(135deg, #D5BBA6, #C5A48F);
-  color: #1A1A1A !important;
+  background: linear-gradient(135deg, #40070D, #4D0C0C);
+  color: #FDF7F8 !important;
   padding: 6px 10px;
   border-radius: 3px;
-  box-shadow: 0 2px 8px rgba(197, 164, 143, 0.4);
+  box-shadow: 0 2px 8px rgba(64, 7, 13, 0.5);
 }
 .nav-links a.btn-location:not(.nav-active) {
   background: none;
@@ -39,10 +39,10 @@
   padding: 0;
 }
 .nav-links a.btn-location.nav-active {
-  background: linear-gradient(135deg, #D5BBA6, #C5A48F);
+  background: linear-gradient(135deg, #40070D, #4D0C0C);
   padding: 6px 10px;
   border-radius: 3px;
-  box-shadow: 0 2px 8px rgba(197, 164, 143, 0.4);
+  box-shadow: 0 2px 8px rgba(64, 7, 13, 0.5);
 }
 
 /* ============================================
@@ -91,8 +91,8 @@ body {
    FLOATING BOOK BTN
    ============================================ */
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 8px 25px rgba(197, 164, 143, 0.35); }
-  50%       { box-shadow: 0 12px 35px rgba(197, 164, 143, 0.6); }
+  0%, 100% { box-shadow: 0 8px 25px rgba(64, 7, 13, 0.45); }
+  50%       { box-shadow: 0 12px 35px rgba(64, 7, 13, 0.7); }
 }
 .book-btn {
   animation: pulse-glow 3s ease-in-out infinite;
@@ -106,7 +106,7 @@ body {
    ============================================ */
 .stat-card:hover h3,
 .reach-stat-item:hover h3 {
-  background: linear-gradient(135deg, #C5A48F, #A07858);
+  background: linear-gradient(135deg, #4D0C0C, #40070D);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -172,7 +172,7 @@ body {
   left: 0;
   width: 0;
   height: 1px;
-  background: #C5A48F;
+  background: #40070D;
   transition: width 0.3s ease;
 }
 .nav-links a:not(.nav-active):not(.btn-location):hover::after {
@@ -214,9 +214,10 @@ body {
   right: 30px;
   width: 42px;
   height: 42px;
-  background: linear-gradient(135deg, #D5BBA6, #C5A48F);
+  background: linear-gradient(135deg, #40070D, #4D0C0C);
   border: none;
   border-radius: 50%;
+  color: #FDF7F8;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -242,7 +243,7 @@ body {
    ============================================ */
 img.img-loading {
   opacity: 0;
-  transition: opacity 0.4s ease-out;
+  transition: opacity 0.1s ease-out;
 }
 img.img-loaded {
   opacity: 1;

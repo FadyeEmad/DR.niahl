@@ -8,15 +8,15 @@
 <link rel="stylesheet" href="shared.css">
 <style>
   :root {
-    --bg-page: #EBE0D6;
-    --bg-header: #E2D4C8;
-    --form-bg: #DFD1C4;
-    --input-bg: #EBE0D6;
-    --text-primary: #7A6A5E;
-    --text-dark: #1A1A1A;
-    --header-color: #796C63;
-    --btn-gold: linear-gradient(135deg, #D6BBA7, #C6A590);
-    --input-border: #C8B9AD;
+    --bg-page: #1C010C;
+    --bg-header: #2F0410;
+    --form-bg: #3C050F;
+    --input-bg: #1C010C;
+    --text-primary: #40070D;
+    --text-dark: #FDF7F8;
+    --header-color: #FFFFFF;
+    --btn-gold: linear-gradient(135deg, #40070D, #4D0C0C);
+    --input-border: #4D0C0C;
   }
   
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -72,7 +72,7 @@
     color: var(--text-dark) !important;
     padding: 6px 10px;
     border-radius: 3px;
-    box-shadow: 0 2px 8px rgba(197, 164, 143, 0.4);
+    box-shadow: 0 2px 8px rgba(64, 7, 13, 0.5);
   }
 
   /* TOP HEADER */
@@ -169,17 +169,17 @@
     background-color: var(--input-bg);
     transition: border-color 0.3s;
   }
-  .form-control::placeholder { color: #928377; }
+  .form-control::placeholder { color: rgba(253,247,248,0.5); }
   .form-control:focus {
     outline: none;
-    border-color: #A08878;
+    border-color: #4D0C0C;
     background-color: var(--bg-header);
   }
 
   select.form-control {
     appearance: none;
     -webkit-appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%231A1A1A' d='M5 6L0 0h10z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23FDF7F8' d='M5 6L0 0h10z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 15px center;
     padding-right: 30px;
@@ -252,7 +252,7 @@
     margin-bottom: 6px;
   }
   
-  .icon-wrapper { color: #B69580; font-size: 10px; }
+  .icon-wrapper { color: #FDF7F8; font-size: 10px; }
 
   .footer-bottom {
     text-align: center;
@@ -347,6 +347,7 @@
       <a href="page2.html">RESULTS</a>
       <a href="page3.html">BOOK</a>
       <a href="page4.html" class="btn-location">LOCATIONS</a>
+      <a href="article.html">BLOG</a>
     </div>
   </nav>
 </div>
