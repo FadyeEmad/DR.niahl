@@ -5,15 +5,15 @@
 /* REVEAL CLASSES - set by JS on scroll */
 .reveal {
   opacity: 0;
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
-.reveal.reveal-up    { transform: translateY(30px); }
-.reveal.reveal-left  { transform: translateX(-30px); }
-.reveal.reveal-right { transform: translateX(30px); }
-.reveal.reveal-scale { transform: scale(0.95); }
+.reveal.reveal-up    { transform: translate3d(0, 30px, 0); }
+.reveal.reveal-left  { transform: translate3d(-30px, 0, 0); }
+.reveal.reveal-right { transform: translate3d(30px, 0, 0); }
+.reveal.reveal-scale { transform: scale3d(0.95, 0.95, 1); }
 .reveal.visible {
   opacity: 1;
-  transform: none;
+  transform: translate3d(0, 0, 0);
 }
 
 /* STAGGER DELAYS */
@@ -53,7 +53,14 @@
   to   { opacity: 1; }
 }
 body {
-  animation: fadeIn 0.4s ease forwards;
+  animation: fadeIn 0.25s ease forwards;
+}
+
+/* PERFORMANCE: offscreen cards */
+.treatment-card,
+.gallery-item,
+.clinic-card {
+  contain: layout style paint;
 }
 
 /* ============================================
