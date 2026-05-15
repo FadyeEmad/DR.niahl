@@ -187,6 +187,72 @@ body {
 }
 
 /* ============================================
+   SHARED MOBILE NAV
+   Matches the brand page navbar sizing on small screens.
+   ============================================ */
+@media (max-width: 768px) {
+  .container > nav,
+  .brand-nav {
+    padding: 18px 20px !important;
+    max-width: 900px;
+  }
+
+  .container > nav {
+    width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+  }
+
+  .brand-name,
+  .brand-nav .brand-name {
+    font-size: 15px !important;
+    white-space: nowrap;
+  }
+
+  .nav-links,
+  .brand-nav .nav-links {
+    gap: 8px !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .nav-links a,
+  .brand-nav .nav-links a {
+    font-size: 7.5px !important;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .container > nav,
+  .brand-nav {
+    padding: 15px 10px !important;
+  }
+
+  .brand-name,
+  .brand-nav .brand-name {
+    font-size: 12.5px !important;
+  }
+
+  .nav-links,
+  .brand-nav .nav-links {
+    gap: 5px !important;
+  }
+
+  .nav-links a,
+  .brand-nav .nav-links a {
+    font-size: 6px !important;
+    letter-spacing: 0 !important;
+  }
+
+  .nav-links a.nav-active,
+  .nav-links a.btn-location,
+  .brand-nav .nav-links a.nav-active,
+  .brand-nav .btn-location {
+    padding: 3px 5px !important;
+  }
+}
+
+/* ============================================
    GALLERY ITEM OVERLAY
    ============================================ */
 .gallery-item {
